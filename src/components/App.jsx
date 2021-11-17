@@ -23,9 +23,14 @@ class App extends Component{
         console.log(response.data)
     }
 
+    async deleteSong(key){
+        console.log(key)
+        await axios.delete(`http://127.0.0.1:8000/music/${key}/`)
+    }
+
     render() {
         return (
-            <MusicTable songs={this.state.songs} />
+            <MusicTable deleteSong={this.deleteSong} songs={this.state.songs} />
         )
     }
 }
