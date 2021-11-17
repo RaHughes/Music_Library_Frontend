@@ -1,6 +1,6 @@
 import React, { Component } from 'react'; 
 import axios from 'axios';
-import { render } from '@testing-library/react';
+import MusicTable from './MusicTable/MusicTable';
 
 class App extends Component{
     constructor(props){
@@ -25,9 +25,7 @@ class App extends Component{
 
     render() {
         return (
-            <div>
-                Hello Comrade
-            </div>
+            <MusicTable songs={this.state.songs} />
         )
     }
 }
