@@ -6,15 +6,22 @@ const MusicTable = (props) => {
     return ( 
         <div>
             <h1>Music Library</h1>
-            {props.songs.map(song => {
-                return <div>
-                    <h2>{song.title}</h2>
-                    <h3>{song.artist}</h3>
-                    <p>{song.album}</p>
-                    <p>{song.genre}</p>
-                    <p>{song.release_date}</p>
-                </div>
-            })}
+                <table> 
+                    <th>Title</th>
+                    <th>Artist</th>
+                    <th>Album</th>
+                    <th>Genre</th>
+                    <th>Release Date</th>
+                    {props.songs.map(song => {
+                        return <tr key={song.id}>
+                            <td>{song.title}</td>
+                            <td>{song.artist}</td>
+                            <td>{song.album}</td>
+                            <td>{song.genre}</td>
+                            <td>{song.release_date}</td>
+                        </tr>
+                    })}
+                </table>
         </div>
      );
 
