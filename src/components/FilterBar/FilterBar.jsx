@@ -20,6 +20,9 @@ class FilterBar extends Component {
     handleSubmit = (event) => {
         event.preventDefault()
         this.props.sort(this.state.filterBy, this.state.filter)
+        this.setState({
+            noDupes: []
+        })
     }
 
     render() { 
@@ -33,9 +36,9 @@ class FilterBar extends Component {
                 <option value="release_date">Release Date</option>
                 <option value="title">Title</option>
             </select>
-            <select name="filter" onChange={this.handleChange}>
+            <select name="filter" onChange={this.handleChange} value={this.state.filter}>
                {this.props.songs.map(song => {
-                   if(song[this.state.filterBy] in this.state.noDupes){
+                   if(this.state.noDupes.includes(song[this.state.filterBy])){
                        return
                    } else {
                     this.state.noDupes.push(song[this.state.filterBy])
