@@ -2,10 +2,9 @@ import React from 'react';
 
 const MusicTable = (props) => {
     console.log(props)
-    if (props.songs !== '')
+    if (props.songs !== [])
     return ( 
         <div>
-            <h1>Music Library</h1>
                 <table>
                     <tr> 
                         <th>Title</th>
