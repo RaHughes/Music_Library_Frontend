@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import MusicTable from './MusicTable/MusicTable';
 import SongForm from './SongForm/SongForm';
-import FilterBar from './FilterBar/FilterBar'
+import FilterBar from './FilterBar/FilterBar';
+import './App.css'
 
 class App extends Component{
     constructor(props){
@@ -49,7 +50,7 @@ class App extends Component{
 
     render() {
         return (
-            <div>
+            <div className='main'>
             <h1> Music Library </h1>
             <FilterBar sort={this.filterSelect} songs={this.state.songs}/>
             <MusicTable deleteSong={this.deleteSong} songs={this.state.songs} />

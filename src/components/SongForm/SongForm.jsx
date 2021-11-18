@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import './SongForm.css'
 
 class SongForm extends Component {
     constructor(props) {
@@ -25,6 +26,7 @@ class SongForm extends Component {
 
     render() { 
         return ( 
+            <div className="formDiv">
             <form onSubmit={this.handleSubmit}>
                 <h1>Add a Song</h1>
                 <label>Title</label>
@@ -39,6 +41,7 @@ class SongForm extends Component {
                 <input type="date" name="release_date" onChange={this.handleChange} value={this.state.release_date}/>
                 <button type="submit">Add Song</button>
             </form>
+            </div>
          );
     }
 }
